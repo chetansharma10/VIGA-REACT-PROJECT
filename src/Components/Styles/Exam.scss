@@ -1,0 +1,248 @@
+@import "./Commons";
+.examContainer{
+    position: relative;
+    @include dim(100%,auto);
+    color:$fonts;
+    @include flex(column,center,none);
+    padding:25px;
+    @media screen and (max-width:368px){
+        padding:10px;
+    }
+
+    .examHeader{
+        @include dim(100%,auto);
+        @include flex(row,center,space-between);
+
+        .timer{
+            @include dim(100px,100%);
+            @include flex(row,center,space-between);
+
+            object{
+                transform:scale(0.7);
+            }
+        }
+
+        .btnsHead{
+            @include dim(20%,auto);
+            margin-right: 5%;
+            @include flex(row,center,space-between);
+
+            button{
+                @include dim(100px,35px);
+                margin: 10px;
+                background-color:$fonts;
+                border:none;
+                padding:15px;
+                @include flex(row,center,center);
+                outline:none;
+                cursor: pointer;
+            }
+        
+        }
+
+    }
+    .examMain{
+        @include dim(100%,auto);
+
+        @include flex(row,flex-start,space-between);
+    
+        .examLeft{
+            @include dim(70%,auto);
+
+
+            .queBox{
+                @include dim(100%,auto);
+                padding:10px;
+                @media screen and (max-width:368px){
+                    padding:0px;
+                }
+                @include flex(column,flex-start,center);
+                .queContent{
+                    margin-top: 4px;
+                    @include dim(100%,auto);
+                    @include flex(column,flex-start,center);
+                    padding:10px;
+                    background-color:$secondary;
+
+          
+                    img{
+                        margin-top: 4px;
+                        @include dim(250px,150px);
+
+                       
+                    }
+                }
+                @media screen and (max-width:370px) {
+                    .queContent{
+                        img{
+                            width:max-content;
+
+                        }
+                    }
+                }
+                .options{
+                    @include dim(100%,auto);
+                    @include flex(column,flex-start,center);
+                    
+                    .optionItem{
+                        margin-top: 10px;
+                        @include dim(100%,auto);
+                        @include flex(row,center,flex-start);
+                        padding:13px;
+                        background-color:$secondary;
+
+                        label{
+                            margin-left: 10px;
+                        }
+                        input[type='radio']:after {
+                            @include dim(10px,10px);
+                            border-radius: 15px;
+                            background-color: $secondary;
+                            
+                            content: '';
+                            display: inline-block;
+                            visibility: visible;
+                            border: 2px solid $fonts;
+                        }
+                    
+                        input[type='radio']:checked:after {
+                            @include dim(10px,10px);
+                            border-radius: 15px;
+                            background-color: $fonts;
+                            content: '';
+                            display: inline-block;
+                            visibility: visible;
+                            border: 2px solid $fonts;
+                         }
+                    }
+                }
+            }
+
+
+        }
+        .examRight{
+            margin-right: 5%;
+
+            @include dim(20%,max-content);
+
+            .questions{
+                @include dim(100%,auto);
+                @include flex(column,center,center);
+
+               .topQuestions{
+                   padding:10px;
+                    @include dim(100%,auto);
+                    display:grid;
+                    grid-template-rows: repeat(4,max-content);
+                    grid-template-columns: repeat(4,max-content);
+                    row-gap: 20px;
+                    align-items: none;
+                    justify-items:none;
+                    place-content: space-between;
+                    column-gap: auto;
+                    button{
+                        width:30px;
+                        height:30px;
+                        background-color:$primary;
+                        border:none;
+                        outline:none;
+                    }
+
+
+               }
+               .pages{
+                @include dim(100%,auto);
+                @include flex(row,center,center);
+
+                button{
+                    width:40px;
+                    height:40px;
+                    font-size:1rem;
+                    background-color:$primary;
+                    border:none;
+                    outline:none;
+                    color:$fonts;
+                    opacity:0.5;
+
+                    &:hover{
+                        opacity:1;
+                        cursor: pointer;
+                    }
+                }
+               
+               }
+
+
+            
+                
+            }
+
+            .npBtns{
+                @include flex(row,center,space-between);
+                @include dim(100%,auto);
+                button{
+                    @include dim(100px,35px);
+                    margin: 10px;
+                    background-color:$fonts;
+                    border:none;
+                    padding:15px;
+                    @include flex(row,center,center);
+                    outline:none;
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+      
+    }
+    @media screen and (max-width:1024px)
+    {   .examHeader{
+
+        .btnsHead{
+            width:auto;
+            margin-right: 0px;
+            button{
+                width:auto;
+            }
+        }
+
+        }
+        .examMain{
+            @include flex(column,center,center);
+            .examLeft{
+                width:100%;
+            }
+            .examRight{width:100%;
+                margin-right: 0px;
+            }
+        }
+     
+    }
+}
+.no-active{
+    background-color:white;
+}
+.active{
+    background-color:red;
+}
+
+.toastContainer{
+    @include dim(auto,auto);
+    position: absolute;
+    right:30px;
+    overflow: hidden;
+    bottom:50px;
+    .toast{
+        margin-bottom: 10px;
+        @include dim(300px,auto);
+        background-color:$secondary;
+        @include flex(column,flex-start,none);
+        box-shadow: -1px 2px 20px #00000078;
+        padding:10px 20px 10px 20px;
+        small{
+            font-size: 0.5rem;
+            align-self: flex-end;
+        }
+    }
+}

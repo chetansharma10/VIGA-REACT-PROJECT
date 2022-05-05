@@ -1,0 +1,28 @@
+@import "./Components/Styles/App.scss";
+@import "./Components/Styles/login.scss";
+@import "./Components/Styles/Boards.scss";
+@import "./Components/Styles/Home.scss";
+@import "./Components/Styles/Check.scss";
+@import "./Components/Styles/Exam.scss";
+@import "./Components/Styles/Settings.scss";
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:$primary;
+}
+
+::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color:$secondary;
+    border-radius: 5px;
+}

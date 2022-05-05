@@ -1,0 +1,47 @@
+@import "./Commons";
+
+
+.loginBox{
+    @include dim(auto,500px);
+    margin-top: 50px;
+    background-color:$secondary;
+    @include flex(column,center,space-evenly);
+    padding:30px;
+    color: $fonts;
+    input{
+        @include dim(300px,40px);
+        margin: 10px ;
+        border:none;
+        transition: 1s ease;
+        color: $fonts;
+        border-bottom: 1px solid rgba(0, 238, 255, 0.295);
+        background-color: transparent;
+        outline:none;
+        &:focus{    
+            border-color: aqua;
+            transition: 1s ease;
+        }
+    }
+    a{
+    color: $fonts;
+
+        font-size: 0.7rem;
+    }
+
+    button{
+        @include dim(100px,40px);
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bolder;
+        background-color:$fonts;
+        outline:none;
+        border:none;
+
+
+    }
+}
+@media screen and (max-width:540px) {
+    .loginBox{
+        background-color:transparent;
+    }
+}

@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+import {Routes,Route} from 'react-router-dom';
+
+import Splash from './Components/Splash';
+import Login from './Components/Auth/Login';
+import NavBar from './Components/Others/NavBar';
+import Footer from './Components/Others/Footer';
+import Boards from './Components/onBoard/Boards';
+import Home from './Components/Dashboards/Home/Home';
+import Check from './Components/Dashboards/JoinExam/Check';
+import Exam from './Components/Dashboards/JoinExam/Exam';
+
+import Settings from './Components/Dashboards/Settings/settings';
+
+
+
+
+export default function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      <div className="container">
+        <NavBar/>
+        <Routes>
+          <Route path="/" element={<Splash/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/Boards" element={<Boards/>}></Route>
+          <Route path="/home" element={<Home/>}></Route>
+          <Route path="/check" element={<Check/>}></Route>
+          <Route path="/exam" element={<Exam/>}></Route>
+          <Route path="/settings" element={<Settings/>}></Route>
 
-export default App;
+        </Routes>
+        <Footer/>
+      </div>
+
+  )
+}

@@ -1,0 +1,140 @@
+@import "./Commons";
+.container{
+    height:auto;
+}
+.mainCheck{
+    @include dim(90%,auto);
+    background-color: $primary;
+    margin-top: 20px;
+    color:$fonts;
+    padding:20px;
+    @include flex(column,center,center);
+   .checkHeader{
+        @include flex(flex,center,space-between);
+        @include dim(100%,auto);
+        padding:10px;
+
+        .left{
+            @include flex(flex,center,space-between);
+            @include dim(max-content,60px);
+
+            object{
+                transform:scale(0.5);
+                padding:10px;
+            }
+
+        }
+
+   }
+   .contentArea{
+        padding:10px;
+        @include dim(100%,auto);
+
+        @include flex(row,flex-start,space-between);
+        .leftContent{
+            @include dim(auto,auto);
+            margin-right: 30px;
+
+            img{
+                width:450px;
+                height:450px;
+
+            }
+        }
+        .rightContent{
+            @include flex(row,center,flex-start);
+            @include dim(60%,auto);
+
+            .verified{
+                @include dim(100%,auto);
+
+                .records{
+                    @include dim(100%,50px);
+                    margin-bottom: 10px;
+                    @include flex(row,center,flex-start);              
+                    
+                    p{
+                        padding:14px;
+                    }
+                
+                
+                }
+
+                .startExam{
+                    border:none;
+                    outline:none;
+                    font-weight: bolder;
+                    color:$primary;
+                    cursor: pointer;
+                    background-color:$fonts;
+                    @include dim(120px,35px);
+                    @include flex(row,center,center);
+                }
+
+                   
+
+                
+            }
+
+        }
+
+      
+
+        @media screen and (max-width:1200px) {
+            .rightContent{
+
+                justify-content: center;
+            }
+        }
+   }
+   
+   .foot{
+       @include flex(row,center,flex-end);
+       @include dim(100%,auto);
+       
+       .footItem{
+           padding:10px;
+            @include dim(200px,auto);
+            @include flex(row,center,space-between);
+
+            .textContent{
+                p{
+                    &:first-child{
+                        font-weight: bolder;
+                    }
+                    &:last-child{
+                        opacity:0.5;
+                    }
+                }
+            }
+            img{
+
+                border-radius: 100%;
+                @include dim(45px,45px);
+                object-fit: cover;
+                object-position: center;
+                
+            }
+
+       }
+   }
+     @media screen and (max-width:768px) {
+        .contentArea{
+         @include flex(column,center,space-between);
+            .leftContent,.rightContent{
+                width:100%;
+            }
+            .leftContent{
+                margin:0px;
+                @include dim(100%,auto);
+                @include flex(row,center,center);
+                img{
+                    width:100%;
+                    height:auto;
+
+                }
+            }
+        }        
+    }
+   
+}

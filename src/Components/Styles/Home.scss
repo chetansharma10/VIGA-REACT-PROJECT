@@ -1,0 +1,123 @@
+@import "./_Commons";
+.homeContainer{
+    @include dim(100%,100vh);
+    padding:5px 30px 5px 30px;
+    color:$fonts;
+
+    @include flex(column,flex-start,none);
+
+
+    .classContainer{
+        position: relative;
+        margin-top:10px;
+        @include dim(100%,100vh);
+        @include flex(column,center,none);
+
+        .parentItem{
+
+            @include dim(100%,auto);
+            @include flex(column,center,center);
+            margin-bottom: 10px;
+
+            .classItem{
+                @include dim(100%,auto);
+                background-color:$secondary;
+                cursor: pointer;
+                padding:10px;
+                @include flex(row,center,space-between);
+                object{
+                    transform: scale(0.8);
+                
+                }
+                
+             
+            }
+    
+        
+            .itemDetails{
+                @include dim(100%,auto);
+                background-color:$secondary;
+                @include flex(column,center,none);
+                padding-bottom: 10px;
+    
+                .itemsSub{
+                    @include flex(row,center,space-between);
+                    @include dim(98%,50px);
+                    padding:10px;   
+                    margin: 10px 0px 10px 0px;
+                    background-color:$ternary;
+                    
+                    .examBtn{
+                        cursor: pointer;
+                        background-color:$fonts;
+                        border:none;
+                        @include flex(row,center,center);
+                        @include dim(120px,35px);
+                        outline:none;
+                        font-weight: bolder;
+                    }
+                }
+
+
+                @media screen and (max-width:540px) {
+                    .itemsSub{
+                    @include flex(column,flex-start,space-between);
+                    @include dim(98%,auto);
+
+                    }
+                }
+    
+            }
+
+        }
+
+
+
+        .foot{
+            @include flex(row,center,space-between);
+            @include dim(100%,auto);
+            position:absolute;
+            bottom:0px;
+           
+    
+
+            a{
+                justify-self: flex-start;
+                color:$fonts;
+            }
+            .footItem{
+                padding:10px;
+                 @include dim(200px,auto);
+                 @include flex(row,center,space-between);
+     
+                 .textContent{
+                     p{
+                         &:first-child{
+                             font-weight: bolder;
+                         }
+                         &:last-child{
+                             opacity:0.5;
+                         }
+                     }
+                 }
+                 img{
+     
+                     border-radius: 100%;
+                     @include dim(45px,45px);
+                     object-fit: cover;
+                     object-position: center;
+                     cursor: pointer;
+                     &:hover{
+                         opacity:0.5;
+                     }
+                     
+                 }
+     
+            }
+        }
+   
+    }
+
+
+   
+}

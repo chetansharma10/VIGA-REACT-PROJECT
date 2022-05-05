@@ -1,0 +1,75 @@
+@import "./Commons";
+.boards{
+    @include dim(350px,auto);
+    background-color:$secondary;
+    @include flex(column,center,space-evenly);
+    padding:30px;
+    color: $fonts;
+    margin-top: 30px;
+
+   .image{
+       margin-top:20px;
+       @include dim(100%,250px);
+       @include flex(column,center,center);
+       .back{
+           @include dim(230px,190px);
+           background-color:$ternary;
+           border-radius:100px 100px 100px 100px;
+           top:0px;
+           position: relative;
+           transform:rotate(-10deg);
+           
+       }
+       img{
+           position:absolute;
+           @include dim(200px,120px);
+           object-fit: center;
+           object-position: center;
+       }
+   }
+
+   .desc{
+         margin-top: 30px;
+         text-align: center;
+         text-transform:capitalize;
+
+        color: $fonts;
+        font-size: 1rem;
+
+   }
+
+   button{
+        border:none;
+        background-color:transparent;
+        color: $fonts;
+        font-size: 1.2rem;
+        padding:10px;
+        cursor: pointer;
+        font-weight: bolder;
+   }
+   .icons{
+        @include dim(100%,20px);
+        margin-top:20px;
+        @include flex(row,center,center);
+        span{
+            @include dim(10px,10px);
+            border-radius: 100%;
+            margin:3px;
+            background-color:$fonts;
+            opacity:0.5;
+        }
+        .activeDot{
+            width:20px;
+            border-radius: 0px;
+            opacity:1;
+
+            border-radius:10px 10px 10px 10px;
+        }
+   }
+}
+
+@media screen and (max-width:540px){
+    .boards{
+        background-color:$primary;
+    }
+}

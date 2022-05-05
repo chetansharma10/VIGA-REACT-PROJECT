@@ -1,0 +1,99 @@
+@import "./Commons";
+$primary:#131415;
+$secondary:#232527;
+$ternary:#484C50;
+$fonts:white;
+.container{
+    @include dim(100%,auto);
+    background-color: $primary;
+    @include flex(column,center,space-between);
+    font-family: 'Poppins', sans-serif;
+}
+.bdout{
+    outline:none;
+    border:none;
+}
+.navBar{
+    @include dim(100%,60px);
+    color: $fonts;
+    background-color: $secondary;
+    @include flex(row,center,space-between);
+    padding:0px 15px 0px 15px;
+
+    .logo{
+        border:1px solid none;
+    }
+    .search{
+        @include dim(500px,40px);
+        @include flex(row,center,center);
+        background-color: $primary;
+        padding:2px;
+        color: $fonts;
+        
+     
+        input{
+            @include dim(80%,100%);
+            background-color: transparent;
+            @extend .bdout;
+            color: $fonts;
+            margin-left: 5px;
+        }
+
+        
+    }
+    @media screen and (max-width:815px) {
+        .search{display:none;}
+    }
+    .btns{
+        @include dim(140px,100%);
+        @include flex(row,center,space-evenly);
+        button{
+            @include dim(20px,20px);
+            background-color:transparent;
+            @extend .bdout;
+            @include flex(row,center,center);
+
+
+          
+        }
+    }
+}
+
+
+
+.splashContainer{
+   background-color:$secondary;
+   @include dim(500px,500px);
+   margin-top: 50px;
+   
+   min-width:70%;
+   color: $fonts;
+   @include flex(column,none,space-evenly);
+   padding:10px 30px 10px 30px;
+
+
+   .continueBtn{
+       @include dim(120px,35px);
+       color: $primary;
+       text-decoration: none;
+       background-color:$fonts;
+       @include flex(column,center,center);
+   }
+ 
+ 
+}
+@media screen and (max-width:768px) {
+
+    .splashContainer{
+        min-width:auto;
+        background-color:$primary;
+    }
+}
+
+@media screen and (max-width:540px) {
+
+    .splashContainer{
+        width:100%;
+        background-color:$primary;
+    }
+}
